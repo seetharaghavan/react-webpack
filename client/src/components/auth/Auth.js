@@ -49,7 +49,7 @@ const Auth = () => {
       setErrors((prev) => ({
         ...prev,
         field: "password",
-        message: "Enter Valid Password",
+        message: "Enter valid password",
       }));
       return isValid;
     } else {
@@ -70,6 +70,8 @@ const Auth = () => {
           value={loginInfo.userName}
           name="userName"
           onChange={setFormValue}
+          data-testid="userName"
+          required
         />
         {errors.field === "userName" && (
           <small className="form-text text-danger">{errors.message}</small>
@@ -84,6 +86,8 @@ const Auth = () => {
           value={loginInfo.password}
           name="password"
           onChange={setFormValue}
+          data-testid="password"
+          required
         />
         {errors.field === "password" && (
           <small className="form-text text-danger">{errors.message}</small>
@@ -94,9 +98,9 @@ const Auth = () => {
         )}
       </div>
       {authState.isLoading ? (
-        <div>Loading</div>
+        <div date-testid="loading">Loading</div>
       ) : (
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" data-testid="auth-submit" className="btn btn-primary">
           Submit
         </button>
       )}

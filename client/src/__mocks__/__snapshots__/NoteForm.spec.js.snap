@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Ui should render 1`] = `
+<div
+  className="note-area collapse "
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group text-right"
+    >
+      <button
+        className="btn btn-light"
+        onClick={[Function]}
+      >
+        Add New
+      </button>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label>
+        Title
+      </label>
+      <input
+        className="form-control"
+        data-testid="note-title"
+        name="title"
+        onChange={[Function]}
+        placeholder="Enter title"
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label>
+        Body
+      </label>
+      <textarea
+        className="form-control"
+        data-testid="note-body"
+        name="body"
+        onChange={[Function]}
+        placeholder="Enter description"
+        required={true}
+        rows={15}
+        value=""
+      />
+    </div>
+    <div
+      className="form-group text-right"
+    >
+      <button
+        className="btn btn-primary"
+        data-testid="note-submit"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+`;

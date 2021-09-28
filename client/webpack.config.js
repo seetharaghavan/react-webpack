@@ -21,7 +21,9 @@ const {
   
   const devServer = {
     port,
-    open: true
+    open: true,
+    historyApiFallback: true,
+    clientLogLevel: 'none'
   }
   
 
@@ -30,6 +32,7 @@ module.exports = {
     mode,
     devServer,
     plugins,
+    devtool: 'inline-source-map',
     module: {
       rules: [
         {

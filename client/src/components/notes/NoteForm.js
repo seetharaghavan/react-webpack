@@ -14,13 +14,13 @@ const NoteForm = ({noteState}) => {
 
 
   React.useEffect(() => {
-    if(noteState.selectedNote){
+    if(noteState && noteState.selectedNote){
         const {title, body} = noteState.selectedNote; 
         setNoteObj(prev => ({title, body})) 
     } else {
       setNoteObj(prev => ({title: '', body: ''}))
     }
-  }, [noteState.selectedNote])
+  }, [noteState])
 
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const NoteForm = ({noteState}) => {
         let notes = {
             ...noteObj
         }
-        if(noteState.selectedNote) {
+        if(noteState && noteState.selectedNote) {
             notes.id = noteState.selectedNote.id; 
             dispatch(updateNote(notes)); 
         } else{
@@ -105,6 +105,8 @@ const NoteForm = ({noteState}) => {
             value={noteObj.title}
             name="title"
             onChange={handleInputChange}
+            data-testid="note-title"
+            required
           />
           {
               errors.field === 'title' && <small className="text-danger">{errors.message}</small>
@@ -119,13 +121,15 @@ const NoteForm = ({noteState}) => {
             value={noteObj.body}
             placeholder="Enter description"
             onChange={handleInputChange}
+            data-testid="note-body"
+            required
           />
            {
               errors.field === 'body' && <small className="text-danger">{errors.message}</small>
           }
         </div>
         <div className="form-group text-right">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" data-testid="note-submit" className="btn btn-primary">
             Save
           </button>
         </div>

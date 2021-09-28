@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note UI Test should render without crash 1`] = `
+<li
+  className="note-item"
+>
+  <div
+    className="note-holder"
+  >
+    <div
+      className="note-info content"
+      onClick={[Function]}
+    >
+      <h5
+        className="note-title text"
+      >
+        Test Body
+      </h5>
+      <p
+        className="note-description text"
+      >
+        Test Body
+      </p>
+    </div>
+    <div>
+      <button
+        className="btn btn-light"
+        onClick={[Function]}
+      >
+        x
+      </button>
+    </div>
+  </div>
+</li>
+`;
