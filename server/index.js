@@ -56,7 +56,7 @@ const updateUserNote = (req, res) => {
 };
 
 const deleteUserNote = (req, res) => {
-  const notes = req.body;
+  const notes = req.params.id;
   deleteNotes(notes, (err, notes) => {
     if (err) return res.status(500).json({ err: "Unexpected error occured" });
     else return res.status(200).json(notes);
@@ -93,7 +93,7 @@ const deleteNotes = (note, cb) => {
   const data = fs.readFileSync(filePath, { encoding: "utf8", flag: "r" });
   try {
     let { notes } = JSON.parse(data);
-    let index = [notes.map((note) => note.id).indexOf(note.id)];
+    let index = [notes.map((note) => note.id).indexOf(parseInt(note))];
     notes.splice(index, 1);
     fs.writeFileSync(filePath, JSON.stringify({ notes }));
     cb(null, note); 
@@ -139,7 +139,7 @@ app.get('/me', (req, res) => {
 app.get("/api/notes", validateUser, getNotesForUser);
 app.post("/api/notes", validateUser, saveUserNote);
 app.put("/api/notes", validateUser, updateUserNote);
-app.delete("/api/notes", validateUser, deleteUserNote);
+app.delete("/api/notes/:id", validateUser, deleteUserNote);
 
 app.get("**", (req, res) => {
   return res.sendFile(path.join(__dirname, "public/index.html"));
