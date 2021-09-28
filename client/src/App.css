@@ -1,0 +1,138 @@
+
+
+.note-item{
+    list-style-type: none;
+    border-bottom: 1px solid #0000001f; 
+}
+
+.note-holder{
+    flex-direction: row;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.note-holder p{
+    margin-bottom: 0px; 
+}
+
+.note-info{
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0.95; 
+    cursor: pointer;
+}
+
+.note-form{
+    display: flex; 
+    flex-direction: row;
+    flex: 1; 
+}
+
+.note-table{
+    max-width: 250px; 
+    border-right: 1px solid #0000001f;
+    border-left: 1px solid #0000001f;
+    border-bottom: 1px solid #0000001f;
+    min-height: 500px;
+}
+
+.content{
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.content .text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.empty-note{
+    flex: 1;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    display: flex; 
+    height: 100%; 
+}
+
+.note-table ul{
+    padding: 0px 10px 0px 10px; 
+}
+
+.header{
+    height: 60px;
+    padding: 15px;
+    background-color: #8080804a;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.mt-60{
+    margin-top: 60px;
+}
+
+.note-area{
+    padding: 10px; 
+    border-right: 1px solid #0000001f;
+    border-bottom: 1px solid #0000001f;
+    flex: 1; 
+    min-height: 500px; 
+}
+
+.header p{
+    font-size: 20px;
+    color: #21252980;
+}
+
+.collapse{
+    display: block!important;
+}
+
+.mobile-button{
+    display: none !important;
+}
+
+.header-button{
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 990px){
+    .note-table{
+        min-width: 100%;
+    }
+
+    textarea{
+        max-height: 260px;
+    }
+    .collapse{
+        display: none!important; 
+    }
+    .mobile-button{
+        display: inline-block!important;
+    }
+    .show{
+        display: block!important;
+    }
+    .note-area{
+        border-left: 1px solid #0000001f;
+    }
+}
+
+@media screen and (min-width: 990px){
+    .note-table{
+        min-width: 340px;  
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header-name-text {
+        display: none;
+    }
+}
+
+
+
