@@ -23,7 +23,12 @@ const {
     port,
     open: true,
     historyApiFallback: true,
-    clientLogLevel: 'none'
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+    }
   }
   
 

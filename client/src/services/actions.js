@@ -72,7 +72,6 @@ export const addNewNote = (note) => async dispatch =>  {
             payload: res.data
         });
     }catch(e){
-        console.log(e);
         dispatch({
             type: ERROR_NOTE,
             payload: e.message
@@ -98,10 +97,10 @@ export const updateNote = (note) => async dispatch =>  {
 
 export const deleteNote = (note) => async dispatch =>  {
     try{
-        let res = await httpClient.delete('/api/notes', note); 
+        let res = await httpClient.delete('/api/notes/'+note.id, ); 
         dispatch({
             type: REMOVE_NOTE,
-            payload: res.data
+            payload: note
         });
     }catch(e){
         dispatch({
