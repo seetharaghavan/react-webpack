@@ -1,4 +1,4 @@
-# react-webpack
+# react-note-app
 A minimal note taking app in react with a mock backend.
 
 ## Run it locally
@@ -9,7 +9,6 @@ A minimal note taking app in react with a mock backend.
 - yarn start
 - you could give options in .env else it will default to mode= development, and port to 8080
 - Go to http://localhost:8080 or your env port
-- 
 
 #### Start the Server Side
 - cd server
@@ -17,6 +16,9 @@ A minimal note taking app in react with a mock backend.
 - yarn start
 - Your server started on port 4000
 
+### Test Data
+- username test
+- password test
 
 ### For Testing
 - run yarn test
